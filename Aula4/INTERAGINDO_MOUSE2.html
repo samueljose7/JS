@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area { /* comando para estilizar a div abaixo */
+            font: 20pt Arial; /* 20pt é o tamanho da letra */
+            background-color: rgb(25, 104, 49);
+            color: beige;
+            height: 200px; /* tamanho da div */
+            width: 200px; /* largura da div */
+            line-height: 200px; /* onde as letras irão ser posicionadas na div */
+            text-align: center; /* comando para alinhar as letras na div */
+        }
+    </style>
+</head>
+<body>
+<!--     Comando abaixo para chamar as funções criadas la em baixo em javascript
+ --> <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> 
+    Interaja...
+</div>
+<script>
+    var a=document.getElementById("area")
+    function clicar(){ /* Função criada, quando clicar na div ira acontecer */
+        a.innerText="Clicou"
+        a.style.background="red"
+        a.style.color="yellow"
+    }
+    function entrar(){ /* Função criada, quando o mouse entrar na area da div ira acontecer */
+        a.innerText="Entrou"
+        a.style.background="black"
+        a.style.color="purple"
+    }
+    function sair(){ /* Função criada, quando o mouse sair da area da div ira acontecer */
+        a.innerText="Saiu"
+        a.style.background="blue"
+        a.style.color="green"   
+    }
+    </script>
+</body>
+</html>

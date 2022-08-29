@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOTOS</title>
+</head>
+<body>
+    <b><h1>VERIFICANDO SUA IDADE PARA VOTAR</h1></b>
+    <b>Digite sua idade : </b><input type="number" id="txti" name="txti" placeholder="Digite sua idade">
+    <input type="button" value="VERIFICAR" onclick="verifica()">
+    <div id="res">
+
+
+    </div>
+    <script>
+        function verifica () {
+            var i=document.getElementById("txti")
+            var idade=Number(i.value)
+            var res=document.getElementById("res")
+            res.innerText=`Sua idade ${idade}`
+
+            if (idade<16){ //Uso basico de if/else em js
+                res.innerHTML += "<P>NÃO VOTA</P>"
+            } else if (idade>=16 && idade<18) {
+                res.innerHTML += "<p>VOTO OPCIONAL</p>"
+            } else {
+                res.innerHTML += "<p>VOTO OBRIGATÓRIO</p>"
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

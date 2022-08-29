@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTO DOM</title>
+    <b><h1>SOMANDO NUMEROS</h1></b>
+    <style>
+        body {
+            font:normal 18pt Arial; /* COMANDO PARA FORMATAR O TAMANHO DAS LETRAS NO BODY */
+        }
+        input { /* COMANDO PARA ESTILIZAR A CAIXA DOS NUMEROS */
+            font: normal 18pt Arial;
+            width: 100px; /* LARGURA */
+        }
+        div#res {
+            margin-top: 20px; /* COMANDO PARA PULAR LINHA EM CSS */
+        }
+    </style>
+</head>
+<body>
+    <input id="num" name="num" type="number"> + <!-- COMANDO PARA CRIAR UMA CAIXA PARA BOTAR OS NUMEROS -->
+    <input id="nu" name="nu" type="number">
+    <input type="button" onclick="somar()" value="Somar"> <!-- COMANDO PARA SOMAR OS NUMEROS COM A FUNÇÃO SOMAR -->
+    <div id="res">
+        Resultado...
+    </div>
+    <script>
+        function somar(){ /* Função criada, quando clicar em somar irá: */
+           var a = document.getElementById("num")
+           var b = document.getElementById("nu")
+           var n1=Number.parseInt(a.value)/* Convertendo as strings recebidas em numeros inteiros */
+           var n2=Number.parseInt(b.value)/* Convertendo as strings recebidas em numeros inteiros */
+           var c = document.getElementById("res")
+           var n3= n1+n2
+           c.innerHTML=(`A soma entre ${n1}+${n2} é igual a <strong>${n3}</strong>`)/* Colocando o resultado da soma */
+           
+        }
+    </script>
+</body>
+</html>

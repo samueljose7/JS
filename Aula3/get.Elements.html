@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(32, 46, 201);
+            color: rgb(245, 241, 237);
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>ESTUDANDO O DOm</h1>
+    <p>Agoras apenas agoras nada mais q agoras</p>
+    <P> Aprendendo legal os conceitos de <strong>DOM</strong></P>
+    <div id="msg">Clica nessa porra</div><!-- Coloquei essa div com o id=msg para poder chamar la em baixo por id -->
+
+    <script>
+      var p1=window.document.getElementsByTagName('p')[0]/* Comando usado para encontrar elementos especificos "p" signica na tag <p> no corpo html e [0] corresponde ao primeiro <p> que aparece */
+       document.write(p1.innerText) /* InnerText é o texto que ta dentro da variavel selecionada */
+       p1.style.color="red" /* Comando para mudar a cor da variavel */
+       p1.style.background="white"
+       var corpo=window.document.body/* Selecionei a variavel */
+       corpo.style.background="black"/* Mudei a cor de fundo dela */
+       var p2=window.document.getElementsByTagName('p')[1]
+        document.write(p2.innerHTML) /* Comando que traz o texto do jeito que tava formatado tipo: em negrito, sublinhado etc */
+        p2.style.background="purple"
+        var d=window.document.getElementById('msg')/* Selecionei a div pelo id que eu escolhi ali em cima */
+        d.style.color="black"
+        d.style.background="green"
+        var t=document.getElementsByTagName('h1')[0]
+        t.style.color="blue"
+        t.style.background="red"
+
+    </script>
+    
+</body>
+</html>

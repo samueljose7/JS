@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOUBOTARPRAF</title>
+</head>
+<body>
+    <h1>Where you live</h1>
+    Enter the country in that you live : <input type="text" id="txtp" placeholder="Enter the country"> <!-- caixa para digitar o país -->
+    <input type="button" value="Check" id="but" onclick="checar()"> <!-- criando o botãoo -->
+    <div id="res"> <!-- div pra resposta -->
+
+
+    </div>
+    <script>
+        function checar() { /* criando a função */
+            country=document.getElementById("txtp")/*  encontrando as variaveis */
+            res=document.getElementById("res")
+            c=String(country.value) /* convertendo a variavel em string */
+            res.innerHTML=`<p>The country on that you live are ${c}</p>`/* formatando a resposta */
+            if (c.toLocaleUpperCase()=="BRAZIL") { /* passando tudo pra maiusculo pra tudo que digitar resultar em BRAZIL */
+                res.innerHTML += "<p> You are <strong>Brazilian</strong> guy</p>"
+            } else {
+                res.innerHTML += "<p> You aren't Brazilian guy</p>"
+
+            }
+
+        }
+
+    </script>
+
+    
+    
+</body>
+</html>

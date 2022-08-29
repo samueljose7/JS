@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO</title>
+    <style>
+        body {
+            background-color: rgb(23, 106, 231);
+            font: normal 15pt Arial;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+        footer {
+            color: white
+            ;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px black;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Tabuada</h1>
+   
+</header>
+<section>
+    <div>
+        Número : <input type="number" id="txtnum" placeholder="Digite o número"><!--  caixa de texto -->
+        <input type="button" value="Multiplicar" onclick="multiplica()"> <!-- função para multiplicar -->
+    </div>
+    <select id="res" size="10"> <!-- caixa onde a resposta aparecerá -->
+        <option>Digite um numero acima</option><!-- para nn deixar a caixa vazia :) -->
+
+    </select>
+    
+</section>
+<footer> <!-- rodapé -->
+    <p>Chupa minha pika</p>
+</footer>
+<script>
+    function multiplica () {
+        var num=document.getElementById("txtnum")
+        var res=document.getElementById("res")
+        if (num.value.lenght==0) {
+            alert("ERRO")
+        } else {
+        var numero=Number(num.value)
+        res.innerHTML=" "
+        
+        
+        for (var i=0;i<=10;i++) {
+            var item =document.createElement("option") /* Comando para fazer o vetor entrar na caixa select */
+            item.text=`  ${numero} x ${i}  =  ${numero*i}` /* Texto que parecerá na caixa do select */
+            item.value=`res${i}` /* valor de cada item */
+            res.appendChild(item) /* Comando para adicionar item em um vetor */
+            
+
+        }
+    }
+    
+    }
+</script>
+    
+</body>
+</html>

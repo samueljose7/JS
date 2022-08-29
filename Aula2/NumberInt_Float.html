@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Comando para a pagina ficar em Portugues -->
+<head>
+    <STyle> /* Comando em css para ajudar a estilizar a pagina */
+        body {
+            background-color: rgba(165, 42, 42, 0.527);
+            color: antiquewhite;
+
+        }
+        H1{
+            color: black;
+        }
+    </STyle>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>"MINHA PIKA VOA"</h1>
+    <p>O foda minha pika q voa é q um dia ela cairá</p>
+    <script>
+       var n1= Number.parseInt(window.prompt('Enter a number')) //Todos valores recebidos do prompt são strings
+        var n2=Number.parseInt(window.prompt("Enter other number"))//Number.parseInt funciona como o "n=int(input("Digite um numero"))" e o msm vale para float
+        //Pode ser feito também com "Number(n1)" e para passar algo para string seria "String(n1)"
+        var s=n1+n2
+    alert("A soma dos numeros digitados é " + s)
+    alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)//é como um print normal porém pra funcionar dessa forma ao invés de "" será entre crases
+    s.toFixe(2) funcionaria em float como um "{s:.2f}"
+    s.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) /* comando para formatar o numero para a moeda local poderia ser USD ou EUR */
+    </script>
+</body>
+</html>

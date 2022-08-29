@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANALISE</title>
+    <style>
+        body {
+            background-color: rgb(23, 106, 231);
+            font: normal 15pt Arial;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+        footer {
+            color: white
+            ;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px black;
+        }
+        select {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>ANALISE DE NUMEROS</h1>
+</header>
+<section>
+    <div>
+    Número entre (1 a 100) : <input type="number" id="txtnum" placeholder="Digite o numero"><!--  caixa de texto -->
+    <input type="button" value="ADICIONAR" onclick="adicionar()"><!--  botão + função -->
+    <br></br>
+    <select id="lista" size="10"></select><br></br> <!-- caixa onde entrara o resultado -->
+    <input type="button" value="FINALIZAR" onclick="finalizar()"> <!-- botão para parar o programa -->
+    </div>
+    <div id="res">
+
+    </div>
+</section>
+<footer>
+    <p>Chupa minha pika</p>
+</footer>
+<script>
+    var num=document.getElementById("txtnum")
+    var lista=document.getElementById("lista")
+    var res=document.getElementById("res")
+    var valores=[] /* criei um vetor */
+
+    function isNumero (n) {
+        if (Number(n)>=1 && Number(n)<=100) { /* para validar apenas numeros de 1 a 100 */
+            return true
+        } else {
+         
+            
+            return false
+        }
+
+    }
+    function inList (n, l) {
+        if (l.indexOf(Number(n))!=-1) { /* se o numero digitado estiver na lista então */
+            return true 
+        } else {
+            return false
+        }
+
+    }
+    function adicionar() {
+   
+        if (isNumero(num.value) && !inList(num.value, valores)) { /* se o numero (valor do numero) e não estiver na lista então */
+           valores.push(Number(num.value)) /* o numero sera adicionado ao vetor */
+            var item=document.createElement("option") /* criando option para o resultado aparecer no select */
+            item.text=`Valor ${num.value} foi adicionado` /* digitando oq irá aparecer */
+            lista.appendChild(item)
+            res.innerHTML=""/* apagando dps a caixa automaticamente */
+        } else {
+            alert("NUMERO NA LISTA")
+        }
+    num.value=""/* apagando dps a caixa automaticamente */
+    num.focus() /* função para apagar a caixa junto com a acima */
+    }
+    function finalizar() {
+    if (valores.length==0) {/*  se o tamanho do vetor for 0 */
+        alert("ADICIONE VALORES ANTES DE FINALIZAR")
+    } else {
+        var tot = valores.length /* variavel total sera o tamanho do vetor */
+        var maior=valores[0] /* maior começara no primeiro vetor  */
+        var menor = valores[0]/* menor começara no primeiro vetor  */
+        var soma=0
+        var media=0
+        for (var i in valores) { /* logica basica de for */
+            soma += valores[i]
+            if (valores[i]>maior) {
+                maior = valores[i]
+            }
+            if (valores[i]<menor){
+                menor=valores[i]
+            }
+
+        }
+        media=soma/tot
+        /* Mostrando os resultados das variaveis acima */
+        res.innerHTML=" "
+        res.innerHTML=`<p>Ao todo temos ${tot} numeros cadastrados</p>`    
+        res.innerHTML+=`<p>A soma dos números cadastrados é ${soma}</p>`  
+        res.innerHTML+=`<p>O maior número foi ${maior}</p>`  
+        res.innerHTML+=`<p>O menor número foi ${menor}</p>`  
+        res.innerHTML+=`<p>A média dos numeros adicionados é ${media}</p>`
+}
+    }
+
+    </script>
+    
+</body>
+</html>

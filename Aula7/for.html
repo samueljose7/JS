@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO</title>
+    <style>
+        body {
+            background-color: rgb(23, 106, 231);
+            font: normal 15pt Arial;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+        footer {
+            color: white
+            ;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px black;
+            text-align: left; /* alinhar a esquerda */
+        }
+    </style>
+</head>
+<body id="body">
+<header>
+    <h1>Vamos contar</h1>
+</header>
+<section>
+    <div>
+<p>Inicio: <input type="number" id="inicio"></p>
+<p>Fim: <input type="number" id="fim"></p>
+<p>Passo: <input type="number" id="passo"></p>
+<p><input type="button" value="Contar" onclick="contar()"></p>
+</div>
+<div id="res">
+    Preparando a contagem..
+
+
+</div>
+</section>
+<footer>
+    <p>Chupa minha pika</p>
+</footer>
+    <script>
+        function contar () {
+            var ini=document.getElementById("inicio")
+            var fim=document.getElementById("fim")
+            var pas=document.getElementById("passo")
+            var res=document.getElementById("res")
+            
+
+            if (ini.value.length==0 || fim.value.length==0 || pas.value.length==0){ /* LINHA PARA DIZER QUE SE NN TIVER VALORES EM QLQR UMA DESSAS VARIAVEIS O PROGRAMA NN FUNCIONARA */
+              alert("ERRO DADOS INCOMPLETOS")
+            } else { /* CASO CONTRARIO O PROGRAMA SEGUE NORMALMENTE */
+                res.innerText="Contando.." 
+                var i=Number(ini.value)
+                var f=Number(fim.value)
+                var p=Number(pas.value)
+                if(p<=0) { /* PASSO TEM Q SER DIFERENTE DE 0 SE NN, O PROGRAMA NN FAZ SENTIDO */
+                    alert("PASSO INVALIDO")
+                }
+                
+                if(i<f) {
+               //Contagem correta
+                for (var c = i; c <= f ;c += p) {
+                    res.innerHTML +=`${c} -> `
+                }
+                res.innerHTML+="🏁"
+                } else {
+                    //Contagem regressiva
+                    for (var c = i; c >= f ;c -= p) {
+                    res.innerHTML +=`${c} -> `
+
+                }
+                res.innerHTML+="🏁"
+                }
+            
+       
+            
+        }
+        
+    }
+    </script>
+</body>
+</html>
